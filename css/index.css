@@ -11,7 +11,7 @@ body {
   background-color: #f8f8f8; 
   color: #333;
   margin: 0;
-  padding: 20px;
+  padding: 9px;
 }
 
 
@@ -20,10 +20,30 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #333; 
+  background-color: lightslategray; 
   z-index: 1000;
+  padding-top: 5px;
+  font-size: 20px;
+}
+.menu-toggle {
+  display: none; 
+  cursor: pointer;
 }
 
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background-color: #333;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
 
 header {
   background-color: #333;
@@ -60,20 +80,29 @@ nav ul li a:hover {
 
 section {
   margin-bottom: 30px;
-  background-color: #fff; 
+  background-color:#C5D5EA; 
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+#About {
+  padding-top: 40px;
+  background-color: #C5D5EA;
+
 }
 
 img {
   width:95%;
 }
 h1 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: bold;
-  color: #444;
+  color: #555;
   margin-bottom: 10px;
+}
+#Experience {
+  background-color: #C5D5EA;
 }
 
 h2 {
@@ -83,49 +112,27 @@ h2 {
   margin-bottom: 8px;
 }
 #projects {
-  background-color: #f7f7f7;
+  
   padding: 40px 20px;
 }
 
 .project {
-  margin-bottom: 30px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  display: block;
+  border-radius: 3%;
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #D8E1E9;
 }
 
-.project h3 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+ul {
+  list-style-type: none;
 }
-
-.project p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.project a {
-  display: inline-block;
-  padding: 8px 20px;
-  text-decoration: none;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.project a:hover {
-  background-color: #0056b3;
-}
-
 
 #skills {
-  background-color: #fff;
-  padding: 40px 20px; /* Adjusted padding */
+  background-color:#C5D5EA;
+  padding: 40px 20px; 
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -153,19 +160,19 @@ h2 {
   color: #fff;
 }
 
-/* Skills section styling */
+
 .skills-section {
   background-color: #f0f0f0;
   padding: 20px;
 }
 
-/* Projects section styling */
+
 .projects-section {
   background-color: #e8e8e8;
   padding: 20px;
 }
 
-/* Footer styling */
+
 .footer {
   background-color: #333;
   padding: 20px;
@@ -235,13 +242,36 @@ button[type="submit"]:hover {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  background-color:lightblue;
+  background-color:#B3C5D7;
 }
 footer {
-  padding: 20px;
+  padding-left: 20px;
   text-align: center;
   background-color: #ddd;
   color: #555;
+}
+.project p {
+  font-size: 16px;
+  color: #888; 
+  margin-bottom: 10px; 
+}
+a {
+  font-size: 15px; ;
+}
+
+.view-button {
+  padding: 10px 20px; 
+  background-color: #7392B7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 5px; 
+}
+
+.view-button:hover {
+  background-color: #0056b3;
 }
 
 
@@ -264,5 +294,35 @@ footer {
 @media only screen and (min-width: 1025px) {
   body {
     font-size: 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu-toggle {
+      display: block; 
+  }
+
+  .menu {
+      display: none; 
+  }
+
+  
+  .menu-toggle.active .hamburger span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active .hamburger span:nth-child(2) {
+      opacity: 70%;
+  }
+
+  .menu-toggle.active .hamburger span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+  }
+
+  
+  .menu-toggle.active + .menu {
+      display: block;
+  }
+  .menu a {
+    color:black;
   }
 }
