@@ -3,10 +3,20 @@ let today = new Date()
 console.log(today)
 let footer = document.querySelector('footer')
 let copyright = document.createElement('p')
-copyright.innerHTML = `Your name ${thisYear}`
+let yourName = "Daria"
+copyright.innerHTML = `${yourName} ${thisYear}`
 footer.appendChild(copyright)
 
-let skills = [ 'HTML','CSS', 'JavaScript','frameworks', 'React']
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+
+  menuToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
+  });
+});
+
+
+let skills = [ 'HTML','CSS', 'JavaScript','Frameworks', 'React']
 
 let skillsSection = document.getElementById('skills')
 let skillsList = skillsSection.querySelector('ul')
@@ -45,3 +55,47 @@ messageForm.addEventListener('submit', (event) => {
 
     event.target.reset()
 })
+
+var githubRequest = new XMLHttpRequest();
+var githubUsername = "darialevinson"; 
+
+var url = `https://api.github.com/users/${githubUsername}/repos`;
+githubRequest.open('GET', url);
+githubRequest.send()
+
+githubRequest.onload = function() {
+    if (githubRequest.status === 200) {
+      var repositories = JSON.parse(githubRequest.responseText);
+  
+      
+      var projectSection = document.getElementById('projects');
+      
+      var projectList = projectSection.querySelector('div');
+ 
+var projectList = document.createElement('div');
+
+for (var i = 0; i < repositories.length; i++) {
+    var projectDiv = document.createElement('div');
+    projectDiv.classList.add('project');
+
+    var projectName = document.createElement('h3');
+    projectName.innerText = repositories[i].name;
+
+    var projectDescription = document.createElement('p');
+    projectDescription.innerText = repositories[i].description || 'No description provided';
+
+    var viewButton = document.createElement('a');
+    viewButton.innerText = 'View Project';
+    viewButton.href = repositories[i].html_url;
+    viewButton.classList.add('view-button');
+
+    projectDiv.appendChild(projectName);
+    projectDiv.appendChild(projectDescription);
+    projectDiv.appendChild(viewButton);
+
+    projectList.appendChild(projectDiv);
+}
+
+
+var projectsSection = document.getElementById('projects');
+projectsSection.appendChild(projectList);}}
