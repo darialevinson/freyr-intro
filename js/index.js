@@ -99,3 +99,47 @@ for (var i = 0; i < repositories.length; i++) {
 
 var projectsSection = document.getElementById('projects');
 projectsSection.appendChild(projectList);}}
+let githubUsername = "darialevinson";
+let url = `https://api.github.com/users/${githubUsername}/repos`;
+
+// Using Fetch API
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.statusText}`);
+    }
+    return response.json();
+  })
+  .then(repositories => {
+    
+    var projectSection = document.getElementById('projects');
+    var projectList = projectSection.querySelector('div');
+
+    var projectList = document.createElement('div');
+
+    for (var i = 0; i < repositories.length; i++) {
+      var projectDiv = document.createElement('div');
+      projectDiv.classList.add('project');
+
+      var projectName = document.createElement('h3');
+      projectName.innerText = repositories[i].name;
+
+      var projectDescription = document.createElement('p');
+      projectDescription.innerText = repositories[i].description || 'No description provided';
+
+      var viewButton = document.createElement('a');
+      viewButton.innerText = 'View Project';
+      viewButton.href = repositories[i].html_url;
+      viewButton.classList.add('view-button');
+
+      projectDiv.appendChild(projectName);
+      projectDiv.appendChild(projectDescription);
+      projectDiv.appendChild(viewButton);
+
+      projectList.appendChild(projectDiv);
+    }
+
+    var projectsSection = document.getElementById('projects');
+    projectsSection.appendChild(projectList);
+  })
+  .catch(error => console.error('Error fetching data:', error));
