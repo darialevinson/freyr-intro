@@ -99,8 +99,6 @@ for (var i = 0; i < repositories.length; i++) {
 
 var projectsSection = document.getElementById('projects');
 projectsSection.appendChild(projectList);}}
-let githubUsername = "darialevinson";
-let url = `https://api.github.com/users/${githubUsername}/repos`;
 
 // Using Fetch API
 fetch(url)
