@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>My Portfolio</title>
-        <link rel="stylesheet" href="css/index.css">
-    </head>
- 
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="..." crossorigin="anonymous" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
 <body>
+    <!-- Header Section -->
     <header class="sticky-header">
         <nav>
-            <ul>
+            <!-- Navigation Menu -->
+            <div class="menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul class="menu">
+                <!-- Navigation Links -->
                 <li><a href="#About">About</a></li>
                 <li><a href="#Experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -21,87 +32,71 @@
         </nav>
     </header>
 
+    <!-- About Section -->
     <section id="About">
         <h1>About</h1>
-        <img class = "woman" src="img/woman_bg.png" alt="Woman">
-
-        <p>My name is Daria.I am 35 years old.I am from Ukraine.Now that I am a housewife,<br> 
-            I aspire to become a frontend developer.<br>
-             I have a passion for coding and I hope to become successful in this field very soon.</p>
+        <!-- Image and Personal Information -->
+        <img class="woman" src="img/woman_bg.png" alt="Woman">
+        <p>
+            My name is Daria Buldakova. I am 35 years old. Enthusiastic and motivated individual with a strong desire
+            to transition into the IT industry as a Junior Frontend Developer.
+            I am eager to apply my coding skills and creativity to contribute to dynamic web development projects.
+            Seeking an opportunity to grow and learn within a collaborative and innovative IT company.
+        </p>
     </section>
 
+    <!-- Experience Section -->
     <section id="Experience">
-
         <h1>Experience</h1>
+        <!-- Job Experience Grid -->
         <div class="experience-grid">
             <div class="job">
                 <h2>Job 1</h2>
-                <p>Position: manager<br>
-                Beauty Salon Name | 123 Main Street, Kyiv, Ukraine | 2016-2020</p>
+                <p>
+                    Position: manager<br>
+                    Beauty Salon Name | 123 Main Street, Kyiv, Ukraine | 2016-2020
+                </p>
             </div>
             <div class="job">
                 <h2>Job 2</h2>
-                <p>Position: sales manager<br>
-                Darimode clothing store | 456 Main Street, Kyiv, Ukraine | 2008-2016</p>
+                <p>
+                    Position: sales manager<br>
+                    Darimode clothing store | 456 Main Street, Kyiv, Ukraine | 2008-2016
+                </p>
             </div>
-            
         </div>
     </section>
 
-    <section id ="projects">
+    <!-- Projects Section -->
+    <section id="projects">
         <h2>Projects</h2>
-        <ul>
-            
-               <div class="project">
-                <h3>Portfolio Website</h3>
-                <p>A showcase of my work and skills created using HTML, CSS, and JavaScript.</p>
-                <a href="portfolio.html">View Project</a>
-               </div>
-              
-          
-              
-              <div class="project">
-                <h3>Uber Taxi App</h3>
-                <p>A frontend of a taxi booking app using React and Google Maps API.</p>
-                <a href="uber_taxi.html">View Project</a>
-              </div>
-          
-              
-              <div class="project">
-                <h3>Health Clock</h3>
-                <p>A health tracking application developed with Vue.js and designed for daily wellness monitoring.</p>
-                <a href="health_clock.html">View Project</a>
-              </div>
-        </ul>
+        <!-- Project Content -->
+        <div></div>
     </section>
 
-    <section id = "skills">
+    <!-- Skills Section -->
+    <section id="skills">
         <h2>Skills</h2>
-        <ul>
-            <li>HTML/CSS</li>
-            <li>JavaScript</li>
-            <li>Frameworks/Libraries (e.g., <span class="framework">React</span>, <span class="framework">Angular</span>, <span class="framework">Vue.js</span>)</li>
-            <li>Responsive Design</li>
-            <li>Version Control/Git</li>
-            <li>Testing/Debugging</li>
-            <li>Basic Design Skills</li>
-            <li>Package Managers and Task Runners</li>
-            <li>Adaptability and Learning</li>
-          </ul>
+        <!-- Skills List  -->
+        <ul></ul>
     </section>
 
+    <!-- Connect Section -->
     <section id="Connect">
         <h1>Connect</h1>
         <p>Contact information:</p>
-        <ul>
-            <li><a href="mailto:youremail@example.com">Send Email</a></li>
-            <li><a href="tel:+123456789">123-456-789</a></li>
-           <li> <a href="https://www.facebook.com/YourProfile" > My Facebook </a></li>
-            
+        <!-- Contact Information List -->
+        <ul class="contact-list">
+            <li><a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i> Send Email</a></li>
+            <li><a href="tel:+123456789"><i class="fas fa-phone"></i> 123-456-789</a></li>
+            <li><a href="https://www.facebook.com/YourProfile"><i class="fab fa-facebook"></i> My Facebook</a></li>
         </ul>
     </section>
+
+    <!-- Leave a Message Section -->
     <section>
         <h2>Leave a Message</h2>
+        <!-- Message Form -->
         <form id="leave_message" class="message-form">
             <div class="form-group">
                 <label for="usersName">Your name:</label>
@@ -119,20 +114,16 @@
         </form>
     </section>
 
-    <section id = "messages">
+    <!-- Messages Section -->
+    <section id="messages">
         <h2>Messages</h2>
+        <!-- Messages List (to be filled) -->
         <ul></ul>
     </section>
+
+    <!-- Footer Section -->
     <footer></footer>
-<script src = "js/index.js"></script>
+    <!-- JavaScript File -->
+    <script src="js/index.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
